@@ -23,7 +23,7 @@ if uploaded_file is not None:
 Danielsの理論に基づいて、改善点やアドバイスを200文字程度で日本語で教えてください。"""
 
     response = openai.ChatCompletion.create(
-        model="gpt-4-1106-preview",  # または gpt-3.5-turbo
+        model="gpt-4.1-nano",  # または gpt-3.5-turbo
         messages=[{"role": "user", "content": prompt}]
     )
     comment = response.choices[0].message.content
