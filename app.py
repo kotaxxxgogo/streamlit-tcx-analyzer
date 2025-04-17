@@ -23,9 +23,14 @@ if uploaded_file is not None:
         st.write(f"**{k}**: {v}")
 
     st.subheader("🤖 ChatGPTアドバイス")
-    prompt = f"""以下はランニングの要約です：\n{summary}
-Danielsの理論に基づいて、改善点やアドバイスを200文字程度で日本語で教えてください。"""
+    prompt = f"""
+以下はランナーの1回のトレーニングデータの要約です：
 
+{summary}
+
+このデータを分析して、このランナーが今後のトレーニングで改善すべきポイントや、注意点、今の調子の評価などを日本語で具体的にアドバイスしてください。
+Danielsのランニング理論に基づいて、個別のアドバイスをお願いします。
+"""
     # ✅ 新しい形式でChat Completionを呼び出す
     response = client.chat.completions.create(
         model=model,
