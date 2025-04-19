@@ -12,7 +12,7 @@ client = openai.OpenAI()  # ✅ 新しいOpenAIクライアントを作成
 model = "gpt-4.1-nano"  # ✅ 正式なGPT-4 Turboのモデル名
 st.markdown(f"**使用モデル：** `{model}`")  # モデル名表示（任意）
 
-uploaded_file = st.file_uploader("📤 TCXファイルをアップロード", type="tcx")
+uploaded_file = st.file_uploader("📤 TCXファイルをアップロード", type="none")
 
 if uploaded_file is not None:
     df = parse_tcx(uploaded_file)
